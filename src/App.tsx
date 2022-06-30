@@ -1,9 +1,9 @@
 import * as C from "./App.styles";
 
-function App() {
+const App = () => {
   return (
     <C.Container>
-      ...
+      ......
     </C.Container>
    
   );
