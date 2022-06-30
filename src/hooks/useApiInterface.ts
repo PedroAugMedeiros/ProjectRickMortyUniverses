@@ -9,7 +9,7 @@ export const useApiInterface = () => {
   const getAll = useCallback(async () => {
     const { status, data } = await ApiService.getAll();
     if (status !== 200 || data === charactersList) throw new Error();
-    setcharactersList(data);
+    setcharactersList(data.results);
   }, [charactersList]);
 
   return {

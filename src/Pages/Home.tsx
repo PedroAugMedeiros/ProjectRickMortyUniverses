@@ -1,14 +1,20 @@
 import * as C from "./home.styles";
+import { useEffect } from 'react';
 import { useApiInterface } from '../hooks/useApiInterface';
 
-  const { charactersList } = useApiInterface()
+const Home = () => {
+  const { charactersList , getAll } = useApiInterface()
+
+  useEffect(() => {
+    getAll();
+  }, [getAll]);
 
   const FirstList = () => {
     return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).map((item, index) => {
       if(index < 10){
         return  (
          <div className= "caracther-card">
-        <p>{ item.image }</p>
+        <img src={ item.image }></img>
         <p>{ item.name }</p>
         <p>{ item.status }</p>
          </div>
@@ -16,20 +22,21 @@ import { useApiInterface } from '../hooks/useApiInterface';
       }
       else {
         return (
-          null
+          'ull'
         )
       }
      })
   }
-
-const Home = () => {
+  
   return (
     /* list 20 characters */
     <C.Home>
-      {FirstList()}
+      { FirstList() }
     </C.Home>
    
   );
 }
+
+
 
 export default Home;
