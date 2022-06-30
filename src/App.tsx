@@ -1,13 +1,12 @@
-import * as C from "./App.styles";
-import Home from "./Pages/Home"
+import Home from './Pages/Home';
+import * as C from './App.styles';
 
 const App = () => {
   return (
     <C.Container>
-     <Home />
+      <Home />
     </C.Container>
-   
   );
-}
+};
 
 export default App;

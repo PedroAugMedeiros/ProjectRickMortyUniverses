@@ -11,7 +11,7 @@ const Home = () => {
 
   const FirstList = () => {
     return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).map((item, index) => {
-      if(index < 10){
+      if(index < 20){
         return  (
          <div className= "caracther-card">
         <img src={ item.image }></img>
@@ -29,7 +29,6 @@ const Home = () => {
   }
   
   return (
-    /* list 20 characters */
     <C.Home>
       { FirstList() }
     </C.Home>
