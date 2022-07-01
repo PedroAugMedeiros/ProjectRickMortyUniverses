@@ -3,7 +3,7 @@ import { RickMortyContext } from '../context/RickMortyContext'
 import { useEffect, useState, useContext } from 'react';
 import { useApiInterface } from '../hooks/useApiInterface';
 import NotFound from './NotFound';
-import { Redirect } from 'react-router-dom'
+import { Navigate } from 'react-router-dom';
 
 
 const Home = () => {
@@ -23,38 +23,29 @@ const Home = () => {
      setCharacterSelected(itemId);
      setBlockDetails(false);
   }
- 
 
-  const FirstList = () => {
-    return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).map((item, index) => {
+  if(blockDetails !== true) {
+    return (
+        <Navigate to='/Details'></Navigate>
+    )
+  }
+    
+  return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).map((item, index) => {
       if(index < 20) {
         return  (
+          <C.Home>
          <div className='caracther-card'>
         <img src={ item.image } alt={ item.name } ></img>
         <p value={ item.id } className='carachter-name' onClick={() => HandleClick(item.id) }>{ item.name }</p>
         <p>{ item.status }</p>
          </div>
-        )
-      }
-      else {
-        return (
-          <NotFound />
-        )
-      }
-     })
-  }
-
-  if(blockDetails !== true) {
-    return (
-        <Redirect to='/Details'></Redirect>
-    )
-  }
-  
-  return (
-    <C.Home>
-      { FirstList() }
     </C.Home>
   );
+} else {
+  <Navigate to="NotFound"></Navigate>
+}
+
+  })
 }
 
 export default Home;
