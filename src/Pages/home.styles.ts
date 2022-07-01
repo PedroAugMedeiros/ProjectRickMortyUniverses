@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+margin: 0;
+padding: 0;
+`;
+
 export const Home = styled.div`
   width: 100%;
   display: flex;
@@ -31,9 +36,23 @@ export const Home = styled.div`
   }
 `;
 
-export const DetailsCaracther = styled.div`
-  display: flex;
-  flex-direction: column; 
-  width: 80%;
-  border> solid black 1px;
+export const Button = styled.button`
+cursor: pointer;
+background: #00DBAF;
+color: black;
+font-size: 1em;
+margin: 1em;
+padding: 0.25em 1em;
+border-radius: 10px;
+hight: 2em;
+border: 2px solid #2A004F;
+width: 30%;
+height: 20vh%;
+&:hover
+{
+        -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
+        box-shadow: 0 4px 5px 3px rgba(119,53,136,.459)!important;
+}
 `;

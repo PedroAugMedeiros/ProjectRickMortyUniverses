@@ -1,33 +1,32 @@
 import * as C from './detailsCaracther.styles';
 import { RickMortyContext } from '../context/RickMortyContext'
-import { useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import { useApiInterface } from '../hooks/useApiInterface';
 
-const DetailsCaracther = () => {
+export const DetailsCaracther = () => {
   
-  const { charactersList  } = useApiInterface()
-  const { showDetails, setShowDetails, characterSelected, setCharacterSelected } = useContext(RickMortyContext);
+  const { getAll, charactersList } = useApiInterface();
 
-    const vrau = charactersList.find((item) => item.id === characterSelected).map((item) => {
-      return(
-      <C.DetailsCaracther>
+  getAll();
+
+
+  const {  characterSelected } = useContext(RickMortyContext);
+ 
+  return charactersList.filter((item) => item.id === characterSelected).map((item, index) => {
+      return  (
+        <C.DetailsCaracther>
+       <div className='caracther-card'>
       <img src={ item.image } alt={ item.name } ></img>
-        <h1> { item.name }</h1>
-        <p> { item.status }</p>
-        <p>  { item.species }</p>
-        <p>  { item.type }</p>
-        <p> { item.gender }</p>
-        <div> <p>{ item.origin.name }</p>
-        <img src={ item.origin.url } alt={ item.origin.name }/></div>
-        <p>{ item.name }</p>
-        <p>{ item.status }</p>
-    </C.DetailsCaracther>
+      <p>Name: { item.name }</p>
+      <p>Status: { item.status }</p>
+      <p>Specie: { item.species }</p>
+      { item.type === '' ? (<p>Type: ?</p>) : <p>Type: { item.type }</p> }
+      <p> { item.gender }</p>
+       </div>
+  </C.DetailsCaracther>
       )
-     })
-
-     return(
-      <p>xx</p>
-     ) 
-    }
+    } 
+  )
+}
 
     export default DetailsCaracther;

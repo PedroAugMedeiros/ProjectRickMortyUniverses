@@ -5,8 +5,10 @@ export type RickMortyContextProps = {
 }
 
 export type RickMortyContextType = {
+  globalCharactersList: any[];
   showDetails: boolean;
   characterSelected: number;
+  setGlobalCharactersList: (newState: []) => void;
   setShowDetails: (newState: boolean) => void;
   setCharacterSelected: (newState: number) => void;
 }

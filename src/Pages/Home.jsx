@@ -1,8 +1,7 @@
 import * as C from "./home.styles";
 import { RickMortyContext } from '../context/RickMortyContext'
-import { useEffect, useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { useApiInterface } from '../hooks/useApiInterface';
-import NotFound from './NotFound';
 import { Navigate } from 'react-router-dom';
 
 
@@ -14,19 +13,17 @@ const Home = () => {
 
   const [ blockDetails, setBlockDetails ] = useState(true)
 
+  getAll();
 
-  useEffect(() => {
-    getAll();
-  }, [getAll]);
 
   const HandleClick = (itemId) => {
      setCharacterSelected(itemId);
-     setBlockDetails(false);
+     setBlockDetails(false)
   }
 
   if(blockDetails !== true) {
     return (
-        <Navigate to='/Details'></Navigate>
+        <Navigate to="/Details"></Navigate>
     )
   }
     
@@ -36,13 +33,14 @@ const Home = () => {
           <C.Home>
          <div className='caracther-card'>
         <img src={ item.image } alt={ item.name } ></img>
-        <p value={ item.id } className='carachter-name' onClick={() => HandleClick(item.id) }>{ item.name }</p>
+        <C.Button onClick={ () => HandleClick(item.id) }> { item.name } </C.Button>
         <p>{ item.status }</p>
          </div>
     </C.Home>
-  );
+  )
 } else {
-  <Navigate to="NotFound"></Navigate>
+  return(<Navigate />)
+  
 }
 
   })

@@ -4,16 +4,17 @@ import "./index.css";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { RickMortyContextProvider } from './context/RickMortyContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  <RickMortyContextProvider>
     <BrowserRouter>
     <App />
     </BrowserRouter>
-  </React.StrictMode>
+    </RickMortyContextProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
