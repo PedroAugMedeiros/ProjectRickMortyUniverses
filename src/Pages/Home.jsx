@@ -1,18 +1,23 @@
 import * as C from "./home.styles";
-import { useEffect } from 'react';
+import { RickMortyContext } from '../context/RickMortyContext'
+import { useEffect, useContext } from 'react';
 import { useApiInterface } from '../hooks/useApiInterface';
 import NotFound from './NotFound';
 
+
 const Home = () => {
   const { charactersList , getAll } = useApiInterface()
+  const { showDetails, setShowDetails, characterSelected, setCharacterSelected } = useContext(RickMortyContext);
 
   useEffect(() => {
     getAll();
   }, [getAll]);
 
   const HandleClick = (itemId) => {
-
+     setShowDetails(true)
+     setCharacterSelected(itemId)
   }
+ 
 
   const FirstList = () => {
     return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).map((item, index) => {
@@ -31,6 +36,14 @@ const Home = () => {
         )
       }
      })
+  }
+
+  if(showDetails && characterSelected !== 0) {
+    return (
+      <C.Home>
+     { 'DetailsCaracther()' }
+      </C.Home>
+    )
   }
   
   return (
