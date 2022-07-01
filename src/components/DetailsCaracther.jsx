@@ -1,15 +1,18 @@
-/*import * as C from './detailsCaracther.styles'
+import * as C from './detailsCaracther.styles';
+import { RickMortyContext } from '../context/RickMortyContext'
+import { useEffect, useContext } from 'react';
 import { useApiInterface } from '../hooks/useApiInterface';
 
-//
-const characterId = 5;
-
-const DetailsCaractherComponent = () => {
+const DetailsCaracther = () => {
   
-     return  (
+  const { charactersList  } = useApiInterface()
+  const { showDetails, setShowDetails, characterSelected, setCharacterSelected } = useContext(RickMortyContext);
+
+    const vrau = charactersList.find((item) => item.id === characterSelected).map((item) => {
+      return(
       <C.DetailsCaracther>
       <img src={ item.image } alt={ item.name } ></img>
-        <p> { item.name }</p>
+        <h1> { item.name }</h1>
         <p> { item.status }</p>
         <p>  { item.species }</p>
         <p>  { item.type }</p>
@@ -20,9 +23,11 @@ const DetailsCaractherComponent = () => {
         <p>{ item.status }</p>
     </C.DetailsCaracther>
       )
+     })
+
+     return(
+      <p>xx</p>
+     ) 
     }
-    
 
-
-export default DetailsCaractherComponent;
-*/
+    export default DetailsCaracther;
