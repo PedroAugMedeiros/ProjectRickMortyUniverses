@@ -5,10 +5,8 @@ const Header = () => {
   return (
     <C.Header>
         <div>
-        <h1>
-          <Link to="/Home"><h1>Home</h1></Link> 
-          </h1>
-        </div>
+          <Link to="/Home"><h2>Home</h2></Link> 
+          </div>
         <div>
         <h1>Rick And Morty Universe</h1>
         </div>

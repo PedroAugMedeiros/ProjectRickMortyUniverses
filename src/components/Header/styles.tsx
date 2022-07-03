@@ -5,14 +5,25 @@ export const Header = styled.header`
   flex-direction: row;
   justify-content: space-around;
   background: #00DBAF;
-  padding: 10px 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-rigth: 10px;
   align-items: center;
-  height: 30px;
+  height: 50px;
    
-
   h1 {
+    padding: 2px;
+    padding-bottom: 0px;
+    margin: 0;
+    font-size: 120%;
+    margin-rigth: 10px;
+  }
+
+  h2 {
     font-size: 110%;
+  }
+
+  .HomeMenu {
+    flex-direction: row;
   }
 
 `;
