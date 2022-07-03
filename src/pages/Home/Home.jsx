@@ -43,10 +43,68 @@ const Home = () => {
     })
     }
   }
+
+  const FiltredBySpecie = () => {
+    if( typeFilter === filters.FiltredByName) {
+      return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).filter((item) => item.specie.includes(searchInput)).map((item, index) => {
+        if(index < 20) {
+          return  (
+           <div className='caracther-card'>
+          <img src={ item.image } alt={ item.name } ></img>
+          <C.Button onClick={ () => HandleClick(item.id) }> { item.name } </C.Button>
+          <p>{ item.status }</p>
+           </div>
+
+    )
+  } else {
+    return(<Navigate to='/NotFound'/>)
+    
+  }
   
+    })
+    }
+  }
+
+
+  const FiltredByStatus = () => {
+    if( typeFilter === filters.FiltredByName) {
+      return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).filter((item) => item.status.includes(searchInput)).map((item, index) => {
+        if(index < 20) {
+          return  (
+           <div className='caracther-card'>
+          <img src={ item.image } alt={ item.name } ></img>
+          <C.Button onClick={ () => HandleClick(item.id) }> { item.name } </C.Button>
+          <p>{ item.status }</p>
+           </div>
+
+    )
+  } else {
+    return(<Navigate to='/NotFound'/>)
+    
+  }
+  
+    })
+    }
+  }
+
+
   if( typeFilter === filters.FiltredByName){
     return ( <C.Home>
     {FiltredByName()}
+    </C.Home>
+    )
+  }
+
+  if( typeFilter === filters.FiltredByName){
+    return ( <C.Home>
+    {FiltredBySpecie()}
+    </C.Home>
+    )
+  }
+  
+  if( typeFilter === filters.FiltredByName){
+    return ( <C.Home>
+    {FiltredByStatus()}
     </C.Home>
     )
   }
