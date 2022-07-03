@@ -3,9 +3,9 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import Home from './pages/Home';
-import DetailsCaracther from './components/DetailsCaracther';
-import Header from './components/Header';
+import Home from './pages/Home/Home';
+import DetailsCaracther from './components/DetailsCharacter/DetailsCaracther';
+import Header from './components/Header/Header';
 
 function App() {
   return (

@@ -1,4 +1,4 @@
-import * as C from './header.styles' 
+import * as C from './styles'; 
 import { Link } from "react-router-dom";
 
 const Header = () => {

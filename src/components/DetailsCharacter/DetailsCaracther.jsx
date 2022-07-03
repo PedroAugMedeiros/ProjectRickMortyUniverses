@@ -1,7 +1,7 @@
-import * as C from './detailsCaracther.styles';
-import { RickMortyContext } from '../context/RickMortyContext'
+import * as C from './styles';
+import { RickMortyContext } from '../../context/RickMortyContext'
 import { useContext } from 'react';
-import { useApiInterface } from '../hooks/useApiInterface';
+import { useApiInterface } from '../../hooks/useApiInterface';
 
 export const DetailsCaracther = () => {
   

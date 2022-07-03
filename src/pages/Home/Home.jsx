@@ -1,7 +1,7 @@
-import * as C from "./home.styles";
-import { RickMortyContext } from '../context/RickMortyContext'
+import * as C from "./styles";
+import { RickMortyContext } from '../../context/RickMortyContext'
 import { useState, useContext } from 'react';
-import { useApiInterface } from '../hooks/useApiInterface';
+import { useApiInterface } from '../../hooks/useApiInterface';
 import { Navigate } from 'react-router-dom';
 
 
@@ -27,6 +27,7 @@ const Home = () => {
     )
   }
     
+  
   return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).map((item, index) => {
       if(index < 20) {
         return  (
@@ -39,7 +40,7 @@ const Home = () => {
     </C.Home>
   )
 } else {
-  return(<Navigate />)
+  return(<Navigate to='/NotFound'/>)
   
 }
 
