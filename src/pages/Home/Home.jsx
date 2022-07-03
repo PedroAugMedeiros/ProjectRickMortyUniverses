@@ -45,8 +45,8 @@ const Home = () => {
   }
 
   const FiltredBySpecie = () => {
-    if( typeFilter === filters.FiltredByName) {
-      return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).filter((item) => item.specie.includes(searchInput)).map((item, index) => {
+    if( typeFilter === filters.FiltredBySpecie) {
+      return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).filter((item) => item.species.includes(searchInput)).map((item, index) => {
         if(index < 20) {
           return  (
            <div className='caracther-card'>
@@ -65,9 +65,8 @@ const Home = () => {
     }
   }
 
-
   const FiltredByStatus = () => {
-    if( typeFilter === filters.FiltredByName) {
+    if( typeFilter === filters.FiltredByStatus) {
       return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).filter((item) => item.status.includes(searchInput)).map((item, index) => {
         if(index < 20) {
           return  (
@@ -95,14 +94,14 @@ const Home = () => {
     )
   }
 
-  if( typeFilter === filters.FiltredByName){
+  if( typeFilter === filters.FiltredBySpecie){
     return ( <C.Home>
     {FiltredBySpecie()}
     </C.Home>
     )
   }
   
-  if( typeFilter === filters.FiltredByName){
+  if( typeFilter === filters.FiltredByStatus){
     return ( <C.Home>
     {FiltredByStatus()}
     </C.Home>
