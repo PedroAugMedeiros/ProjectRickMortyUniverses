@@ -4,13 +4,17 @@ import {
   Route
 } from "react-router-dom";
 import Home from './pages/Home/Home';
-import DetailsCaracther from './components/DetailsCharacter/DetailsCaracther';
-import Header from './components/Header/Header';
+import DetailsCaracther from './components/DetailsCharacther';
+import Header from './components/Header';
+import SearchArea from './components/SearchArea';
 
 function App() {
+
+
   return (
     <C.Container>
       <Header />
+     <SearchArea /> 
     <Routes>
       <Route exact path="/" element={ <Home />} />
       <Route exact path="/Home" element={ <Home /> } />
