@@ -21,7 +21,7 @@ export const DetailsCaracther = () => {
       <p>Status: { item.status }</p>
       <p>Specie: { item.species }</p>
       { item.type === '' ? (<p>Type: ?</p>) : <p>Type: { item.type }</p> }
-      <p> { item.gender }</p>
+      <p> Gender: { item.gender }</p>
        </div>
   </C.DetailsCaracther>
       )

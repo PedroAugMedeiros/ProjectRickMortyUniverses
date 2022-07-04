@@ -7,7 +7,6 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 text-align: center;
-border: solid red 2px;
 color: #00DBAF;
 `;
 

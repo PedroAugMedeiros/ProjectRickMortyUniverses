@@ -27,6 +27,7 @@ const Home = () => {
     if( typeFilter === filters.FiltredByName) {
       return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).filter((item) => item.name.includes(searchInput)).map((item, index) => {
         if(index < 20) {
+          console.log(blockDetails)
           return  (
            <div className='caracther-card'>
           <img src={ item.image } alt={ item.name } ></img>
@@ -43,7 +44,7 @@ const Home = () => {
     })
     }
   }
-
+  console.log(blockDetails)
   const FiltredBySpecie = () => {
     if( typeFilter === filters.FiltredBySpecie) {
       return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).filter((item) => item.species.includes(searchInput)).map((item, index) => {
@@ -85,7 +86,13 @@ const Home = () => {
     })
     }
   }
+  
 
+    if(blockDetails !== true) {
+    return (
+        <Navigate to="/Details"></Navigate>
+    )
+  }
 
   if( typeFilter === filters.FiltredByName){
     return ( <C.Home>
@@ -105,12 +112,6 @@ const Home = () => {
     return ( <C.Home>
     {FiltredByStatus()}
     </C.Home>
-    )
-  }
-
-  if(blockDetails !== true) {
-    return (
-        <Navigate to="/Details"></Navigate>
     )
   }
     

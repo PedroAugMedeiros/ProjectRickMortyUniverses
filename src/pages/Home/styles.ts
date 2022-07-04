@@ -6,31 +6,29 @@ padding: 0;
 `;
 
 export const Home = styled.div`
+  padding: 0;
+  margin: 0;
   width: 100%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-
-  h3 {
-    font-size: 20px;
-    font-weight: bold;
-    color: gray;
-    margin-left: 16px;
-  }
+  background: rgb(32, 35, 41);
 
   .caracther-card {
-    width: 90%;
-    border: 1px solid blue;
-    width: 100%;
+    background: rgb(60, 62, 68);
+    width: 80%;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    margin-bottom: 10%;
+    border-radius: 10px;
 
-    .img {
+
+    img {
       width: 100%;
-      height: 150px;
+      border-radius: 10px;
       background-color: gray;
     }
   }
@@ -48,11 +46,13 @@ hight: 2em;
 border: 2px solid #2A004F;
 width: 30%;
 height: 20vh%;
+margin-bottom: 0;
+
+
 &:hover
 {
-        -webkit-transform: scale(1.05);
-        -ms-transform: scale(1.05);
-        transform: scale(1.05);
-        box-shadow: 0 4px 5px 3px rgba(119,53,136,.459)!important;
+        -webkit-transform: scale(2.00);
+        -ms-transform: scale(2.00);
+        transform: scale(2.00);
 }
 `;
