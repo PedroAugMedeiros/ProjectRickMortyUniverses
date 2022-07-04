@@ -18,8 +18,10 @@ export const SearchArea = () => {
   return ( 
   <C.SearchArea data-testid="searchArea">
     <C.InputLabel>
-        <C.InputTitle>  
-        <p>Buscando Por  {`${typeFilter}`}</p>  
+        <C.InputTitle>
+          {typeFilter !== ''?   
+        <p>Buscando Por  {`${typeFilter}`}</p> : null 
+       } 
         </C.InputTitle>
          <C.Input 
          value={searchInput}data-testid="input" placeholder='Pesquise Aqui!' onChange={({target})=> handleChange(target.value)}></C.Input>
