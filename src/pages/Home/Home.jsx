@@ -1,24 +1,22 @@
 import * as C from "./styles";
 import { RickMortyContext } from '../../context/RickMortyContext';
 import { filters } from "../../helpers/filters";
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import { useApiInterface } from '../../hooks/useApiInterface';
 import { Navigate } from 'react-router-dom';
 
 
 const Home = () => {
 
-  const { setCharacterSelected, searchInput, typeFilter  } = useContext(RickMortyContext);
+  const { setCharacterSelected, searchInput, typeFilter, showDetails, setShowDetails  } = useContext(RickMortyContext);
 
   const { charactersList , getAll } = useApiInterface()
-
-  const [ blockDetails, setBlockDetails ] = useState(true);
 
   getAll();
 
   const HandleClick = (itemId) => {
      setCharacterSelected(itemId);
-     setBlockDetails(false)
+     setShowDetails(true)
   }
 
 
@@ -26,7 +24,6 @@ const Home = () => {
     if( typeFilter === filters.FiltredByName) {
       return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).filter((item) => item.name.includes(searchInput)).map((item, index) => {
         if(index < 20) {
-          console.log(blockDetails)
           return  (
             <div className='caracther-card'>
             <img src={ item.image } alt={ item.name } ></img>
@@ -85,7 +82,7 @@ const Home = () => {
   }
   
 
-    if(blockDetails !== true) {
+    if(showDetails === true) {
     return (
         <Navigate to="/Details"></Navigate>
     )

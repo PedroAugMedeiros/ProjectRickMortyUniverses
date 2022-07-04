@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.body`
 margin: 0;
 padding: 0;
-background: rgb(32, 35, 41);
-width: 100%;
+background-color: rgb(32, 35, 41);
 `;

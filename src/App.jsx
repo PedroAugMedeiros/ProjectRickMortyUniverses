@@ -1,5 +1,6 @@
 import * as C from './App.styles';
 import {
+  useLocation,
   Routes,
   Route
 } from 'react-router-dom';
@@ -11,19 +12,18 @@ import NotFound from './pages/NotFound/NotFound';
 
 function App() {
 
-
+  const location = useLocation();
   return (
     <C.Container>
-      <Header />
-     <SearchArea /> 
-    <Routes>
+        <Header />
+       { location.pathname !== '/Details'? <SearchArea /> : null}  
+          <Routes>
       <Route path="*" element={ <NotFound /> } />
       <Route exact path="/" element={ <Home />} />
       <Route exact path="/Home" element={ <Home /> } />
       <Route exact path="/Details" element={ <DetailsCaracther />} />
-    </Routes>
+    </Routes>   
     </C.Container>
-
   );
 }
 

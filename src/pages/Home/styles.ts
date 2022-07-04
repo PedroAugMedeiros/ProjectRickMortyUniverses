@@ -58,4 +58,8 @@ text-align: flex-start;
 justify-content: flex-start;
 align-itemns: flex-start;
 margin-left: 5%;
+
+&:hover {
+  color: #00DBAF;
+}
 `;
