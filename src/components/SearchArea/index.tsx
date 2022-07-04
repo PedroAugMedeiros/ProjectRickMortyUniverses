@@ -20,23 +20,23 @@ export const SearchArea = () => {
     <C.InputLabel>
         <C.InputTitle>
           {typeFilter !== ''?   
-        <p>Buscando Por  {`${typeFilter}`}</p> : null 
+        <><p>Buscando</p><p>por  {`${typeFilter}`}</p></> : null 
        } 
         </C.InputTitle>
          <C.Input 
          value={searchInput}data-testid="input" placeholder='Pesquise Aqui!' onChange={({target})=> handleChange(target.value)}></C.Input>
         </C.InputLabel>
-        <C.FilterButtons>
+    <C.FilterButtons>
         <C.Button onClick={ () => handleClick(filters.FiltredByName) }>
-          Buscar Por Nome  </C.Button>
+          Buscar por nome  </C.Button>
        <C.Button onClick={ () => handleClick(filters.FiltredBySpecie) }>
-          Buscar Por Specie
+          Buscar por specie
        </C.Button>
        <C.Button onClick={ () => handleClick(filters.FiltredByStatus) }>
-          Buscar Por Status
+          Buscar por status
        </C.Button>
         </C.FilterButtons>
-       
+ 
     </C.SearchArea>
 );
 }

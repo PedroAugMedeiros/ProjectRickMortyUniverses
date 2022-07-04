@@ -6,19 +6,27 @@ export const Header = styled.header`
   flex-direction: row;
   justify-content: space-around;
   background: #00DBAF;
-  margin-bottom: 10px;
   align-items: center;
-  height: 50px;
+  height: 10%;
+  text-decoration: none;
    
+
+  a {
+    text-decoration: none; 
+    color: inherit; 
+  } 
+  
   h1 {
     padding-bottom: 0px;
     margin: 0;
-    font-size: 100%;
+    font-size: 150%;
     margin-rigth: 10px;
+    text-decoration: none;
   }
 
   h2 {
-    font-size: 105%;
+    font-size: 150%;
+    text-decoration: none;
   }
 
 `;

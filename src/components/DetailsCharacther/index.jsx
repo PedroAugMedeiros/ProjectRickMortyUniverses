@@ -17,7 +17,7 @@ export const DetailsCaracther = () => {
         <C.DetailsCaracther>
        <div className='caracther-card'>
       <img src={ item.image } alt={ item.name } ></img>
-      <p>Name: { item.name }</p>
+      <h1>{ item.name }</h1>
       <p>Status: { item.status }</p>
       <p>Specie: { item.species }</p>
       { item.type === '' ? (<p>Type: ?</p>) : <p>Type: { item.type }</p> }

@@ -12,10 +12,9 @@ const Home = () => {
 
   const { charactersList , getAll } = useApiInterface()
 
-  const [ blockDetails, setBlockDetails ] = useState(true)
+  const [ blockDetails, setBlockDetails ] = useState(true);
 
   getAll();
-
 
   const HandleClick = (itemId) => {
      setCharacterSelected(itemId);
@@ -29,12 +28,11 @@ const Home = () => {
         if(index < 20) {
           console.log(blockDetails)
           return  (
-           <div className='caracther-card'>
-          <img src={ item.image } alt={ item.name } ></img>
-          <C.Button onClick={ () => HandleClick(item.id) }> { item.name } </C.Button>
-          <p>{ item.status }</p>
-           </div>
-
+            <div className='caracther-card'>
+            <img src={ item.image } alt={ item.name } ></img>
+            <C.Button onClick={ () => HandleClick(item.id) }> { item.name } </C.Button>
+            { item.status !== 'Alive'?  <p className='characterStatusColorAlive'>{ item.status }</p> : <p className='characterStatusColorDead'>{ item.status }</p> }
+             </div>
     )
   } else {
     return(<Navigate to='/NotFound'/>)
@@ -44,18 +42,17 @@ const Home = () => {
     })
     }
   }
-  console.log(blockDetails)
+
   const FiltredBySpecie = () => {
     if( typeFilter === filters.FiltredBySpecie) {
       return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).filter((item) => item.species.includes(searchInput)).map((item, index) => {
         if(index < 20) {
           return  (
-           <div className='caracther-card'>
-          <img src={ item.image } alt={ item.name } ></img>
-          <C.Button onClick={ () => HandleClick(item.id) }> { item.name } </C.Button>
-          <p>{ item.status }</p>
-           </div>
-
+            <div className='caracther-card'>
+            <img src={ item.image } alt={ item.name } ></img>
+            <C.Button onClick={ () => HandleClick(item.id) }> { item.name } </C.Button>
+            { item.status !== 'Alive'?  <p className='characterStatusColorAlive'>{ item.status }</p> : <p className='characterStatusColorDead'>{ item.status }</p> }
+             </div>
     )
   } else {
     return(<Navigate to='/NotFound'/>)
@@ -71,11 +68,11 @@ const Home = () => {
       return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).filter((item) => item.status.includes(searchInput)).map((item, index) => {
         if(index < 20) {
           return  (
-           <div className='caracther-card'>
-          <img src={ item.image } alt={ item.name } ></img>
-          <C.Button onClick={ () => HandleClick(item.id) }> { item.name } </C.Button>
-          <p>{ item.status }</p>
-           </div>
+            <div className='caracther-card'>
+            <img src={ item.image } alt={ item.name } ></img>
+            <C.Button onClick={ () => HandleClick(item.id) }> { item.name } </C.Button>
+            { item.status !== 'Alive'?  <p className='characterStatusColorAlive'>{ item.status }</p> : <p className='characterStatusColorDead'>{ item.status }</p> }
+             </div>
 
     )
   } else {
@@ -116,13 +113,15 @@ const Home = () => {
   }
     
   return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).map((item, index) => {
+
       if(index < 20) {
+        
         return  (
          <C.Home>
          <div className='caracther-card'>
         <img src={ item.image } alt={ item.name } ></img>
         <C.Button onClick={ () => HandleClick(item.id) }> { item.name } </C.Button>
-        <p>{ item.status }</p>
+        { item.status !== 'Alive'?  <p className='characterStatusColorAlive'>{ item.status }</p> : <p className='characterStatusColorDead'>{ item.status }</p> }
          </div>
          </C.Home>
   )

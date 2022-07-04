@@ -20,39 +20,42 @@ export const Home = styled.div`
     width: 80%;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: center;
     margin-bottom: 10%;
     border-radius: 10px;
 
+    .characterStatusColorAlive {
+      margin-top: 0;
+      font-size: 1.5em;
+      margin-left: 5%;
+      color : red;
+    }
+
+    .characterStatusColorDead {
+      margin-top: 0;
+      font-size: 1.5em;
+      margin-left: 5%;
+      color : rgb(50,205,50);
+    }
 
     img {
       width: 100%;
-      border-radius: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
       background-color: gray;
     }
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled.h1`
+width: 100%;
 cursor: pointer;
-background: #00DBAF;
-color: black;
-font-size: 1em;
-margin: 1em;
-padding: 0.25em 1em;
+color: white;
+font-size: 2em;
 border-radius: 10px;
 hight: 2em;
-border: 2px solid #2A004F;
-width: 30%;
-height: 20vh%;
 margin-bottom: 0;
-
-
-&:hover
-{
-        -webkit-transform: scale(2.00);
-        -ms-transform: scale(2.00);
-        transform: scale(2.00);
-}
+text-align: flex-start;
+justify-content: flex-start;
+align-itemns: flex-start;
+margin-left: 5%;
 `;
