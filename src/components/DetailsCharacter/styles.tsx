@@ -4,7 +4,7 @@ const media = {
   desktop: '@media(min-width: 1000px)'
 }
 
-export const DetailsCaracther = styled.div`
+export const DetailsCharacter = styled.div`
 padding: 0;
 margin: 0;
 width: 100%;
@@ -15,7 +15,7 @@ align-items: center;
 background: rgb(32, 35, 41);
 margin-top: 10%;
 
-.caracther-card {
+.character-card {
   background: rgb(60, 62, 68);
   width: 80%;
   display: flex;

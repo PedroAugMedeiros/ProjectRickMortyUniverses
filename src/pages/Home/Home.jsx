@@ -26,7 +26,7 @@ const Home = () => {
         if(index < 20) {
           return  (
             <C.Home>
-            <div className='caracther-card'>
+            <div className='character-card'>
             <img src={ item.image } alt={ item.name } ></img>
             <C.Button onClick={ () => HandleClick(item.id) }> { item.name } </C.Button>
             { item.status !== 'Alive'?  <p className='characterStatusColorAlive'>{ item.status }</p> : <p className='characterStatusColorDead'>{ item.status }</p> }
@@ -48,7 +48,7 @@ const Home = () => {
         if(index < 20) {
           return  (
           <C.Home>
-            <div className='caracther-card'>
+            <div className='character-card'>
             <img src={ item.image } alt={ item.name } ></img>
             <C.Button onClick={ () => HandleClick(item.id) }> { item.name } </C.Button>
             { item.status !== 'Alive'?  <p className='characterStatusColorAlive'>{ item.status }</p> : <p className='characterStatusColorDead'>{ item.status }</p> }
@@ -70,7 +70,7 @@ const Home = () => {
         if(index < 20) {
           return  (
             <C.Home>
-            <div className='caracther-card'>
+            <div className='character-card'>
             <img src={ item.image } alt={ item.name } ></img>
             <C.Button onClick={ () => HandleClick(item.id) }> { item.name } </C.Button>
             { item.status !== 'Alive'?  <p className='characterStatusColorAlive'>{ item.status }</p> : <p className='characterStatusColorDead'>{ item.status }</p> }
@@ -120,9 +120,9 @@ const Home = () => {
         
         return  (
          <C.Home>
-         <div className='caracther-card'>
+         <div className='character-card'>
         <img src={ item.image } alt={ item.name } ></img>
-        <div className='textCharactherCard'>
+        <div className='textCharacterCard'>
         <C.Button onClick={ () => HandleClick(item.id) }> { item.name } </C.Button>
         { item.status !== 'Alive'?  <p className='characterStatusColorAlive'>{ item.status }</p> : <p className='characterStatusColorDead'>{ item.status }</p> }
         </div>

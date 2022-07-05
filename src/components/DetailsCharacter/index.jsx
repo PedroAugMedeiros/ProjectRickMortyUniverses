@@ -4,7 +4,7 @@ import { RickMortyContext } from '../../context/RickMortyContext'
 import { useContext } from 'react';
 import { useApiInterface } from '../../hooks/useApiInterface';
 
-export const DetailsCaracther = () => {
+export const DetailsCharacter = () => {
   
   const { getAll, charactersList } = useApiInterface();
 
@@ -15,8 +15,8 @@ export const DetailsCaracther = () => {
   return charactersList.filter((item) => item.id === characterSelected).map((item) => {
       return  (
         <D.Container>
-          <C.DetailsCaracther>
-       <div className='caracther-card'>
+          <C.DetailsCharacter>
+       <div className='character-card'>
       <img src={ item.image } alt={ item.name } ></img>
       <h1>{ item.name }</h1>
       { item.status !== 'Alive'?  <p className='characterStatusColorAlive'> Status: { item.status }</p> : <p className='characterStatusColorDead'> Status: { item.status }</p> }
@@ -27,11 +27,11 @@ export const DetailsCaracther = () => {
       <p> Location: { item.location.name }</p>
       <p> Number episodes: { item.episode.length }</p>
        </div>
-          </C.DetailsCaracther>
+          </C.DetailsCharacter>
        </D.Container>
       )
     } 
   )
 }
 
-export default DetailsCaracther;
+export default DetailsCharacter;

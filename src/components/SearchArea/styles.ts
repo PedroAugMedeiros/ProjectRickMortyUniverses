@@ -86,7 +86,7 @@ export const InputTitle = styled.div`
 
 export const Input = styled.input`
 ${media.desktop} {
-  width: 150%;
+  width: 90%;
   height: 50px;
   font-size: 2em;
 }

@@ -31,7 +31,7 @@ ${media.desktop} {
   align-items: center;
   background: rgb(32, 35, 41);
 
-  .caracther-card {
+  .character-card {
     background: rgb(60, 62, 68);
     width: 80%;
     display: flex;
