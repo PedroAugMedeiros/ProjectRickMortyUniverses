@@ -19,13 +19,13 @@ export const Header = styled.header`
   h1 {
     padding-bottom: 0px;
     margin: 0;
-    font-size: 150%;
+    font-size: 130%;
     margin-rigth: 10px;
     text-decoration: none;
   }
 
   h2 {
-    font-size: 150%;
+    font-size: 120%;
     text-decoration: none;
   }
 

@@ -24,7 +24,7 @@ export const SearchArea = () => {
        } 
         </C.InputTitle>
          <C.Input 
-         value={searchInput}data-testid="input" placeholder='Pesquise Aqui!' onChange={({target})=> handleChange(target.value)}></C.Input>
+         value={searchInput} data-testid="input" placeholder='Pesquise Aqui!' onChange={({target})=> handleChange(target.value)}></C.Input>
         </C.InputLabel>
     <C.FilterButtons>
         <C.Button onClick={ () => handleClick(filters.FiltredByName) }>

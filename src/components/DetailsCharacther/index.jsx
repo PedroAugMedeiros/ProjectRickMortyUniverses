@@ -10,8 +10,7 @@ export const DetailsCaracther = () => {
 
   getAll();
 
-
-  const {  characterSelected } = useContext(RickMortyContext);
+  const { characterSelected } = useContext(RickMortyContext);
  
   return charactersList.filter((item) => item.id === characterSelected).map((item) => {
       return  (
@@ -24,6 +23,9 @@ export const DetailsCaracther = () => {
       <p>Specie: { item.species }</p>
       { item.type === '' ? (<p>Type: ?</p>) : <p>Type: { item.type }</p> }
       <p> Gender: { item.gender }</p>
+      <p> Origin: { item.origin.name }</p>
+      <p> Location: { item.location.name }</p>
+      <p> Number episodes: { item.episode.length }</p>
        </div>
           </C.DetailsCaracther>
        </D.Container>

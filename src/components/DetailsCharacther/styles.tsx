@@ -16,9 +16,8 @@ margin-top: 10%;
   width: 80%;
   display: flex;
   flex-flow: column nowrap;
-  margin-bottom: 10%;
   border-radius: 10px;
-  margin-bottom: 100%;
+  margin-bottom: 10%;
 
   .characterStatusColorAlive {
     margin-top: 0;
@@ -34,6 +33,10 @@ margin-top: 10%;
     color : rgb(50,205,50);
   }
   
+  .originDiv {
+    
+  }
+
   h1 {
     font-size: 300%;
     margin-left: 5%;
@@ -42,7 +45,9 @@ margin-top: 10%;
 
   p {
     font-size: 150%;
+    margin: 4%;
     margin-left: 5%;
+    color: white;
   }
 
   img {

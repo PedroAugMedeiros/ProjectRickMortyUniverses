@@ -5,12 +5,17 @@ import { useContext } from 'react';
 
 const Header = () => {
   
-  const { setShowDetails  } = useContext(RickMortyContext);
+  const { setShowDetails, setSearchInput  } = useContext(RickMortyContext);
   
+  const HeaderHandleClick = () => {
+    setShowDetails(false);
+    setSearchInput('')
+  }
+
   return (
     <C.Header>
         <div className='Link'>
-          <Link onClick={()=> { setShowDetails(false)}} to="/Home"><h2>Home</h2></Link> 
+          <Link onClick={()=> { HeaderHandleClick()}} to="/Home"><h2>Home</h2></Link> 
           </div>
         <div>
         <h1>Rick And Morty Universe</h1>
