@@ -17,7 +17,7 @@ function App() {
     <C.Container>
         <Header />
        { location.pathname !== '/Details'? <SearchArea /> : null}  
-          <Routes>
+          <Routes> 
       <Route path="*" element={ <NotFound /> } />
       <Route exact path="/" element={ <Home />} />
       <Route exact path="/Home" element={ <Home /> } />

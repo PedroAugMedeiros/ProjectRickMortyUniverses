@@ -1,11 +1,27 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-margin: 0;
-padding: 0;
+const media = {
+  desktop: '@media(min-width: 1000px)'
+}
+
+
+export const HomeContainer = styled.div`
+${media.desktop} {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
 `;
 
+
 export const Home = styled.div`
+
+${media.desktop} {
+  display: flex;
+  flex-flow: row wrap;
+  width: 20%;
+}   
+
   padding: 0;
   margin: 0;
   width: 100%;
@@ -22,6 +38,8 @@ export const Home = styled.div`
     flex-flow: column nowrap;
     margin-bottom: 10%;
     border-radius: 10px;
+
+   
 
     .characterStatusColorAlive {
       margin-top: 0;
@@ -44,6 +62,7 @@ export const Home = styled.div`
       background-color: gray;
     }
   }
+ 
 `;
 
 export const Button = styled.h1`

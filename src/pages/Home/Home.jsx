@@ -25,11 +25,13 @@ const Home = () => {
       return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).filter((item) => item.name.includes(searchInput)).map((item, index) => {
         if(index < 20) {
           return  (
+            <C.Home>
             <div className='caracther-card'>
             <img src={ item.image } alt={ item.name } ></img>
             <C.Button onClick={ () => HandleClick(item.id) }> { item.name } </C.Button>
             { item.status !== 'Alive'?  <p className='characterStatusColorAlive'>{ item.status }</p> : <p className='characterStatusColorDead'>{ item.status }</p> }
              </div>
+             </C.Home>
     )
   } else {
     return(<Navigate to='/NotFound'/>)
@@ -45,11 +47,13 @@ const Home = () => {
       return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).filter((item) => item.species.includes(searchInput)).map((item, index) => {
         if(index < 20) {
           return  (
+          <C.Home>
             <div className='caracther-card'>
             <img src={ item.image } alt={ item.name } ></img>
             <C.Button onClick={ () => HandleClick(item.id) }> { item.name } </C.Button>
             { item.status !== 'Alive'?  <p className='characterStatusColorAlive'>{ item.status }</p> : <p className='characterStatusColorDead'>{ item.status }</p> }
-             </div>
+            </div>
+          </C.Home>
     )
   } else {
     return(<Navigate to='/NotFound'/>)
@@ -65,12 +69,13 @@ const Home = () => {
       return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).filter((item) => item.status.includes(searchInput)).map((item, index) => {
         if(index < 20) {
           return  (
+            <C.Home>
             <div className='caracther-card'>
             <img src={ item.image } alt={ item.name } ></img>
             <C.Button onClick={ () => HandleClick(item.id) }> { item.name } </C.Button>
             { item.status !== 'Alive'?  <p className='characterStatusColorAlive'>{ item.status }</p> : <p className='characterStatusColorDead'>{ item.status }</p> }
-             </div>
-
+            </div>
+            </C.Home>
     )
   } else {
     return(<Navigate to='/NotFound'/>)
@@ -89,27 +94,27 @@ const Home = () => {
   }
 
   if( typeFilter === filters.FiltredByName){
-    return ( <C.Home>
+    return ( <C.HomeContainer >
     {FiltredByName()}
-    </C.Home>
+    </C.HomeContainer >
     )
   }
 
   if( typeFilter === filters.FiltredBySpecie){
-    return ( <C.Home>
+    return ( <C.HomeContainer>
     {FiltredBySpecie()}
-    </C.Home>
+    </C.HomeContainer>
     )
   }
   
   if( typeFilter === filters.FiltredByStatus){
-    return ( <C.Home>
+    return ( <C.HomeContainer>
     {FiltredByStatus()}
-    </C.Home>
+    </C.HomeContainer>
     )
   }
     
-  return charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).map((item, index) => {
+  return (<C.HomeContainer> {charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).map((item, index) => {
 
       if(index < 20) {
         
@@ -117,8 +122,10 @@ const Home = () => {
          <C.Home>
          <div className='caracther-card'>
         <img src={ item.image } alt={ item.name } ></img>
+        <div className='textCharactherCard'>
         <C.Button onClick={ () => HandleClick(item.id) }> { item.name } </C.Button>
         { item.status !== 'Alive'?  <p className='characterStatusColorAlive'>{ item.status }</p> : <p className='characterStatusColorDead'>{ item.status }</p> }
+        </div>
          </div>
          </C.Home>
   )
@@ -127,7 +134,7 @@ const Home = () => {
   
 }
 
-  })
+  })}</C.HomeContainer>)
 }
 
 export default Home;

@@ -9,7 +9,7 @@ const Header = () => {
   
   const HeaderHandleClick = () => {
     setShowDetails(false);
-    setSearchInput('')
+    setSearchInput('');
   }
 
   return (

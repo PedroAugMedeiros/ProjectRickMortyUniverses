@@ -20,7 +20,7 @@ export const SearchArea = () => {
     <C.InputLabel>
         <C.InputTitle>
           {typeFilter !== ''?   
-        <><p>Buscando</p><p>por  {`${typeFilter}`}</p></> : null 
+        <><p>Buscando&nbsp;</p><p>por  {`${typeFilter}`}</p></> : null 
        } 
         </C.InputTitle>
          <C.Input 

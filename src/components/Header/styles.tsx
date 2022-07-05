@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+const media = {
+  desktop: '@media(min-width: 1000px)'
+}
+
 export const Header = styled.header`
   display: flex;
   width: 100%;
@@ -10,22 +14,32 @@ export const Header = styled.header`
   height: 10%;
   text-decoration: none;
    
+  ${media.desktop} {
+    height: 100px;
+    font-size: 250%;
+  }
 
   a {
     text-decoration: none; 
     color: inherit; 
+    &:hover
+    {
+            -webkit-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+            transform: scale(1.05);
+    }
   } 
   
   h1 {
     padding-bottom: 0px;
     margin: 0;
-    font-size: 130%;
+    font-size: 100%;
     margin-rigth: 10px;
     text-decoration: none;
   }
 
   h2 {
-    font-size: 120%;
+    font-size: 100%;
     text-decoration: none;
   }
 
