@@ -16,8 +16,6 @@ Projeto de Front-End, consumindo a api The Rick And Morty API(https://rickandmor
  CSS(https://developer.mozilla.org/pt-BR/docs/Web/CSS)<br>
  StyledComponents(https://styled-components.com/docs)<br>
  Axios(https://axios-http.com/ptbr/docs/intro)<br>
- <br>
- <br>
 
 # Como rodar
 
