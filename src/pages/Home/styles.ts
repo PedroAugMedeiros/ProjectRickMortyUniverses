@@ -1,18 +1,17 @@
 import styled from 'styled-components';
 
 const media = {
-  desktop: '@media(min-width: 1000px)'
-}
-
+  desktop: '@media(min-width: 1000px)',
+};
 
 export const HomeContainer = styled.div`
 ${media.desktop} {
   display: flex;
   flex-flow: row wrap;
   width: 100%;
+  margin-bottom: 100%;
 }
 `;
-
 
 export const Home = styled.div`
 
@@ -20,6 +19,7 @@ ${media.desktop} {
   display: flex;
   flex-flow: row wrap;
   width: 20%;
+  margin-bottom: 100%;
 }   
 
   padding: 0;

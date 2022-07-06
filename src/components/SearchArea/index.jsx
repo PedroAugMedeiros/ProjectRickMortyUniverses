@@ -7,11 +7,11 @@ export const SearchArea = () => {
 
   const { searchInput, typeFilter, setTypeFilter, setSearchInput } = useContext(RickMortyContext);
   
-  const handleClick = (filterNow : string) => {
+  const handleClick = (filterNow) => {
     setTypeFilter(filterNow);
   }
 
-  const handleChange = (valueInput : string) => {
+  const handleChange = (valueInput) => {
     setSearchInput(valueInput)
   }
   

@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from 'react';
 import { RickMortyContextType, RickMortyContextProps } from '../types';
 
 const initialValue = {

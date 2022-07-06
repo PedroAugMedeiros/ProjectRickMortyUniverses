@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 const media = {
-  desktop: '@media(min-width: 1000px)'
-}
-
+  desktop: '@media(min-width: 820px)',
+};
 
 export const SearchArea = styled.div`
 margin: 0;
@@ -47,11 +46,12 @@ export const Button = styled.div`
 border: solid 1px;
 border-radius: 10px;
 cursor: pointer;
+margin-right: 5%;
 text-align: center;
-padding: 3%;
+padding: 1%;
 background-color: #00DBAF;
 border: solid 5px rgb(32, 35, 41);
-font-size: 120%;
+font-size: 100%;
 color: black;
 
 ${media.desktop} {
@@ -68,9 +68,9 @@ font-size: 200%;
 export const InputLabel = styled.label`
 `;
 
-
 export const InputTitle = styled.div`
   align-items: flex-start;
+  margin-left: 5%;
   p {
     color: white;
     font-size: 2em;
@@ -86,10 +86,11 @@ export const InputTitle = styled.div`
 
 export const Input = styled.input`
 ${media.desktop} {
-  width: 90%;
+  width: 80%;
   height: 50px;
   font-size: 2em;
 }
+    margin-left: 5%;
     margin-top: 5%;
     width: 80%;
     height: 30px;

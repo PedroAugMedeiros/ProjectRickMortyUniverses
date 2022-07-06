@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const media = {
-  desktop: '@media(min-width: 1000px)'
-}
+  desktop: '@media(min-width: 1000px)',
+};
 
 export const DetailsCharacter = styled.div`
 padding: 0;
@@ -22,6 +22,7 @@ margin-top: 10%;
   flex-flow: column nowrap;
   border-radius: 10px;
   margin-bottom: 10%;
+  align-items: center;
 
   .characterStatusColorAlive {
     margin-top: 0;

@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 const media = {
-  desktop: '@media(min-width: 1000px)'
-}
+  desktop: '@media(min-width: 820px)',
+};
 
-export const Header = styled.header`
+const SHeader = styled.header`
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -44,3 +44,5 @@ export const Header = styled.header`
   }
 
 `;
+
+export default SHeader;
