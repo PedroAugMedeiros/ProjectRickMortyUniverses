@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import * as D from '../../App.styles';
 import { RickMortyContext } from '../../context/RickMortyContext';
 import { useApiInterface } from '../../hooks/useApiInterface';
-import * as C from './styles';
+import * as C from './styles'
 
 export const DetailsCharacter = () => {
   const { getAll, charactersList } = useApiInterface();
