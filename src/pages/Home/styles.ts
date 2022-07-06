@@ -4,7 +4,9 @@ const media = {
   desktop: '@media(min-width: 1000px)',
 };
 
+
 export const HomeContainer = styled.div`
+background-color: rgb(32, 35, 41);
 ${media.desktop} {
   display: flex;
   flex-flow: row wrap;
@@ -19,7 +21,6 @@ ${media.desktop} {
   display: flex;
   flex-flow: row wrap;
   width: 20%;
-  margin-bottom: 100%;
 }   
 
   padding: 0;
@@ -30,7 +31,7 @@ ${media.desktop} {
   justify-content: center;
   align-items: center;
   background: rgb(32, 35, 41);
-
+  
   .character-card {
     background: rgb(60, 62, 68);
     width: 80%;

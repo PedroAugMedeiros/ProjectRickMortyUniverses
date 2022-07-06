@@ -114,6 +114,12 @@ const Home = () => {
     )
   }
     
+  if( typeFilter === ''){
+    return ( <C.HomeContainer>
+    {FiltredByStatus()}
+    </C.HomeContainer>
+    )
+  }
   return (<C.HomeContainer> {charactersList.sort((a, b) => (a.id < b.id) ? -1 : 1).map((item, index) => {
 
       if(index < 20) {

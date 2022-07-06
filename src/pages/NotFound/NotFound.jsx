@@ -1,4 +1,4 @@
-import * as C from './notFound.styles.ts'
+import * as C from './notFound.styles.js'
 
 const NotFound = () => {
   return (
